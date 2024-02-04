@@ -18,5 +18,9 @@ public class PlayerMove : MonoBehaviour
         {
             transform.position -= transform.right * 0.1f;
         }
+        if (Input.GetKey(KeyCode.D))
+        {
+            transform.position += transform.right * 0.1f;
+        }
     }
 }
