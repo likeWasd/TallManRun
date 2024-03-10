@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     // Diamondスクリプトを定義
-    public Diamond diamond;
+    public KeyManager diamond;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,9 +31,10 @@ public class PlayerMove : MonoBehaviour
         // GateタグのgameObjectに接触したら
         if (other.gameObject.CompareTag("Gate"))
         {
+            DiamondGateScript gateScript = other.gameObject.GetComponent<DiamondGateScript>();
             // ダイヤモンドをどれくらい変えるかを取得する
-            int value = other.gameObject.GetComponent<GateScript>().ValueChangingDiamond;
-            GateScript.Operators op = other.gameObject.GetComponent<GateScript>().DiamondOperatorType;
+            int value = gateScript.valueChangingDiamond;
+            DiamondGateScript.Operators op = gateScript.diamondOperatorType;
             // ダイヤモンドの数を加える
             diamond.Change(op, value);
         }
