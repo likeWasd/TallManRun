@@ -19,6 +19,7 @@ public class KeyManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        keyCount = Mathf.Clamp(keyCount, 0, keyCount);
         tmpkeyCount.text = "Key " + keyCount.ToString();
     }
 

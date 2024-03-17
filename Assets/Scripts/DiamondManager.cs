@@ -19,6 +19,7 @@ public class DiamondManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        diamondCount =  Mathf.Clamp(diamondCount, 0, diamondCount);
         tmpDiamondCount.text = "Diamond " + diamondCount.ToString();
     }
 
