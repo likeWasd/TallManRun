@@ -19,7 +19,6 @@ public class DiamondManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(diamondCount);
         tmpDiamondCount.text = "Diamond " + diamondCount.ToString();
     }
 
@@ -31,24 +30,24 @@ public class DiamondManager : MonoBehaviour
     }
     
     // ƒ_ƒCƒ„ƒ‚ƒ“ƒh‚Ì”‚ğ•Ï‚¦‚é
-    public int Change(DiamondGateScript.Operators op, int value)
+    public int Change(DiamondGateScript.DiamondOperators op, int value)
     {
         switch (op)
         {
             // op‚ªAdd‚¾‚Á‚½ê‡
-            case DiamondGateScript.Operators.Add:
+            case DiamondGateScript.DiamondOperators.Add:
                 Add(value);
                 break;
             // op‚ªSubtract‚¾‚Á‚½ê‡
-            case DiamondGateScript.Operators.Subtract:
+            case DiamondGateScript.DiamondOperators.Subtract:
                 Subtract(value);
                 break;
             // op‚ªMultiply‚¾‚Á‚½ê‡
-            case DiamondGateScript.Operators.Multiply:
+            case DiamondGateScript.DiamondOperators.Multiply:
                 Multiply(value);
                 break;
             // op‚ªDivide‚¾‚Á‚½ê‡
-            case DiamondGateScript.Operators.Divide:
+            case DiamondGateScript.DiamondOperators.Divide:
                 Divide(value);
                 break;
         }

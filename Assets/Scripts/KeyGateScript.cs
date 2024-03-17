@@ -12,30 +12,30 @@ public class KeyGateScript : MonoBehaviour
     /// <summary>
     /// åÆÇÃå¬êîÇÇ«Ç§Ç‚Ç¡ÇƒïœâªÇ≥ÇπÇÈÇ©
     /// </summary>
-    public enum Operators
+    public enum KeyOperators
     {
         Add,
         Subtract,
         Multiply,
         Divide
     }
-    public Operators KeyOperatorType;
+    public KeyOperators keyOperatorType;
     [SerializeField] TextMeshProUGUI tmpGateKeyCount;
     // Start is called before the first frame update
     void Start()
     {
-        switch (KeyOperatorType)
+        switch (keyOperatorType)
         {
-            case Operators.Add:
+            case KeyOperators.Add:
                 tmpGateKeyCount.text = $"+{valueChangingKey}";
                 break;
-            case Operators.Subtract:
+            case KeyOperators.Subtract:
                 tmpGateKeyCount.text = $"-{valueChangingKey}";
                 break;
-            case Operators.Multiply:
+            case KeyOperators.Multiply:
                 tmpGateKeyCount.text = $"Å~{valueChangingKey}";
                 break;
-            case Operators.Divide:
+            case KeyOperators.Divide:
                 tmpGateKeyCount.text = $"ÅÄ{valueChangingKey}";
                 break;
         }        

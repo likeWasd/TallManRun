@@ -12,30 +12,30 @@ public class DiamondGateScript : MonoBehaviour
     /// <summary>
     /// É_ÉCÉÑÉÇÉìÉhÇÃå¬êîÇÇ«Ç§Ç‚Ç¡ÇƒïœâªÇ≥ÇπÇÈÇ©
     /// </summary>
-    public enum Operators
+    public enum DiamondOperators
     {
         Add,
         Subtract,
         Multiply,
         Divide
     }
-    public Operators diamondOperatorType;
+    public DiamondOperators diamondOperatorType;
     [SerializeField] TextMeshProUGUI tmpGateDiamondCount;
     // Start is called before the first frame update
     void Start()
     {
         switch (diamondOperatorType)
         {
-            case Operators.Add:
+            case DiamondOperators.Add:
                 tmpGateDiamondCount.text = $"+{valueChangingDiamond}";
                 break;
-            case Operators.Subtract:
+            case DiamondOperators.Subtract:
                 tmpGateDiamondCount.text = $"-{valueChangingDiamond}";
                 break;
-            case Operators.Multiply:
+            case DiamondOperators.Multiply:
                 tmpGateDiamondCount.text = $"Å~{valueChangingDiamond}";
                 break;
-            case Operators.Divide:
+            case DiamondOperators.Divide:
                 tmpGateDiamondCount.text = $"ÅÄ{valueChangingDiamond}";
                 break;
         }        

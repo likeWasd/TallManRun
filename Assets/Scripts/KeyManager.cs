@@ -19,7 +19,6 @@ public class KeyManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(keyCount);
         tmpkeyCount.text = "Key " + keyCount.ToString();
     }
 
@@ -31,24 +30,24 @@ public class KeyManager : MonoBehaviour
     }
     
     // Œ®‚Ì”‚ğ•Ï‚¦‚é
-    public int Change(DiamondGateScript.Operators op, int value)
+    public int Change(KeyGateScript.KeyOperators op, int value)
     {
         switch (op)
         {
             // op‚ªAdd‚¾‚Á‚½ê‡
-            case DiamondGateScript.Operators.Add:
+            case KeyGateScript.KeyOperators.Add:
                 Add(value);
                 break;
             // op‚ªSubtract‚¾‚Á‚½ê‡
-            case DiamondGateScript.Operators.Subtract:
+            case KeyGateScript.KeyOperators.Subtract:
                 Subtract(value);
                 break;
             // op‚ªMultiply‚¾‚Á‚½ê‡
-            case DiamondGateScript.Operators.Multiply:
+            case KeyGateScript.KeyOperators.Multiply:
                 Multiply(value);
                 break;
             // op‚ªDivide‚¾‚Á‚½ê‡
-            case DiamondGateScript.Operators.Divide:
+            case KeyGateScript.KeyOperators.Divide:
                 Divide(value);
                 break;
         }

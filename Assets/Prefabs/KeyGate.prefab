@@ -248,10 +248,10 @@ GameObject:
   - component: {fileID: 8864852512714330872}
   - component: {fileID: 2598532284488720496}
   - component: {fileID: 1394293130256797815}
-  - component: {fileID: 3447202667354890021}
+  - component: {fileID: -873586274053345795}
   m_Layer: 0
-  m_Name: DiamondGate
-  m_TagString: DiamondGate
+  m_Name: KeyGate
+  m_TagString: KeyGate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -300,7 +300,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c8e0f7e1234d3d54783e70dbb96627d5, type: 2}
+  - {fileID: 2100000, guid: a59e18d24b39db74cab696d2bb3d8c8a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -343,7 +343,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3447202667354890021
+--- !u!114 &-873586274053345795
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -352,9 +352,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5284454058453339947}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0a5c01cbed85bd4884783649123a4e3, type: 3}
+  m_Script: {fileID: 11500000, guid: e540400c7c420594a961a11dc557c6cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valueChangingDiamond: 3
-  diamondOperatorType: 0
-  tmpGateDiamondCount: {fileID: 1254745801499923459}
+  valueChangingKey: 3
+  keyOperatorType: 0
+  tmpGateKeyCount: {fileID: 1254745801499923459}
