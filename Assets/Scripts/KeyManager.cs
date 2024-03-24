@@ -8,7 +8,7 @@ public class KeyManager : MonoBehaviour
     /// <summary>
     /// Œ®‚ÌŒÂ”
     /// </summary>
-    private int keyCount;
+    public int keyCount;
     [SerializeField] TextMeshProUGUI tmpkeyCount;
     // Start is called before the first frame update
     void Start()
@@ -56,28 +56,28 @@ public class KeyManager : MonoBehaviour
     }
 
     // Œ®‚ÌŒÂ”‚ğ‘‚â‚·(‘«‚µZ‚·‚é)
-    private int Add(int value)
+    int Add(int value)
     {
         keyCount += value;
         return keyCount;
     }
 
     // Œ®‚ÌŒÂ”‚ğŒ¸‚ç‚·(ˆø‚«Z‚·‚é)
-    private int Subtract(int value)
+    int Subtract(int value)
     {
         keyCount -= value;
         return keyCount;
     }
 
     // Œ®‚ÌŒÂ”‚ğŠ|‚¯‚é(Š|‚¯Z‚·‚é)
-    private int Multiply(int value)
+    int Multiply(int value)
     {
         keyCount *= value;
         return keyCount;
     }
 
     // Œ®‚ÌŒÂ”‚ğŠ„‚é(Š„‚èZ‚·‚é)
-    private int Divide(int value)
+    int Divide(int value)
     {
         keyCount /= value;
         return keyCount;

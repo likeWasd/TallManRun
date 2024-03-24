@@ -8,8 +8,9 @@ public class DiamondManager : MonoBehaviour
     /// <summary>
     /// ダイヤモンドの個数
     /// </summary>
-    private int diamondCount;
+    public int diamondCount;
     [SerializeField] TextMeshProUGUI tmpDiamondCount;
+    KeyManager keyManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -56,30 +57,35 @@ public class DiamondManager : MonoBehaviour
     }
 
     // ダイヤモンドの個数を増やす(足し算する)
-    private int Add(int value)
+    int Add(int value)
     {
         diamondCount += value;
         return diamondCount;
     }
 
     // ダイヤモンドの個数を減らす(引き算する)
-    private int Subtract(int value)
+    int Subtract(int value)
     {
         diamondCount -= value;
         return diamondCount;
     }
 
     // ダイヤモンドの個数を掛ける(掛け算する)
-    private int Multiply(int value)
+    int Multiply(int value)
     {
         diamondCount *= value;
         return diamondCount;
     }
 
     // ダイヤモンドの個数を割る(割り算する)
-    private int Divide(int value)
+    int Divide(int value)
     {
         diamondCount /= value;
         return diamondCount;
+    }
+
+    public void DiamondAndKeyMultiplication(int value)
+    {
+        diamondCount *= value;
     }
 }

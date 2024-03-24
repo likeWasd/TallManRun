@@ -8,6 +8,8 @@ public class PlayerMove : MonoBehaviour
     public DiamondManager diamond;
     // Keyスクリプトを定義
     public KeyManager key;
+    // プレイヤーのスピード
+    public float playerSpeed;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,18 +19,18 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += transform.forward * 0.1f;
+        transform.position += transform.forward * playerSpeed;
         if (Input.GetKey(KeyCode.A))
         {
-            transform.position -= transform.right * 0.1f;
+            transform.position -= transform.right * playerSpeed;
         }
         if (Input.GetKey(KeyCode.D))
         {
-            transform.position += transform.right * 0.1f;
+            transform.position += transform.right * playerSpeed;
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         // DiamondGateタグのgameObjectに接触したら
         if (other.gameObject.CompareTag("DiamondGate"))
@@ -49,6 +51,11 @@ public class PlayerMove : MonoBehaviour
             KeyGateScript.KeyOperators keyOp = keyGateScript.keyOperatorType;
             // 鍵の数を加える
             key.Change(keyOp, keyValue);
+        }
+        // GoalタグのgameObjectに接触したら
+        if (other.gameObject.CompareTag("Goal"))
+        {
+            diamond.DiamondAndKeyMultiplication(key.keyCount);
         }
     }
 }
