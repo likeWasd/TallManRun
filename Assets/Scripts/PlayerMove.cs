@@ -56,6 +56,7 @@ public class PlayerMove : MonoBehaviour
         if (other.gameObject.CompareTag("Goal"))
         {
             diamond.DiamondAndKeyMultiplication(key.keyCount);
+            key.keyCount = 0;
         }
     }
 }
