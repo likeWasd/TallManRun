@@ -9,11 +9,12 @@ public class KeyManager : MonoBehaviour
     /// Œ®‚ÌŒÂ”
     /// </summary>
     public int keyCount;
+    [SerializeField] int keyDefaultValue;
     [SerializeField] TextMeshProUGUI tmpkeyCount;
     // Start is called before the first frame update
     void Start()
     {
-        keyCount = 0;
+        keyCount = keyDefaultValue;
     }
 
     // Update is called once per frame

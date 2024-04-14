@@ -9,12 +9,13 @@ public class DiamondManager : MonoBehaviour
     /// ƒ_ƒCƒ„ƒ‚ƒ“ƒh‚ÌŒÂ”
     /// </summary>
     public int diamondCount;
+    [SerializeField] int diamondDefaultValue;
     [SerializeField] TextMeshProUGUI tmpDiamondCount;
     KeyManager keyManager;
     // Start is called before the first frame update
     void Start()
     {
-        diamondCount = 0;
+        diamondCount = diamondDefaultValue;
     }
 
     // Update is called once per frame
