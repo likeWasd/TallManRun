@@ -19,14 +19,14 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += transform.forward * playerSpeed;
+        transform.position += transform.forward * playerSpeed * Time.deltaTime;
         if (Input.GetKey(KeyCode.A))
         {
-            transform.position -= transform.right * playerSpeed;
+            transform.position -= transform.right * playerSpeed * Time.deltaTime;
         }
         if (Input.GetKey(KeyCode.D))
         {
-            transform.position += transform.right * playerSpeed;
+            transform.position += transform.right * playerSpeed * Time.deltaTime;
         }
     }
 
