@@ -6,11 +6,11 @@ using TMPro;
 public class DiamondGateScript : MonoBehaviour
 {
     /// <summary>
-    /// �_�C�������h�̌���ς���l
+    /// ダイヤモンドの個数を変える値
     /// </summary>
     public int valueChangingDiamond;
     /// <summary>
-    /// �_�C�������h�̌����ǂ�����ĕω������邩
+    /// ダイヤモンドの個数をどうやって変化させるか
     /// </summary>
     public enum DiamondOperators
     {
@@ -33,10 +33,10 @@ public class DiamondGateScript : MonoBehaviour
                 tmpGateDiamondCount.text = $"-{valueChangingDiamond}";
                 break;
             case DiamondOperators.Multiply:
-                tmpGateDiamondCount.text = $"�~{valueChangingDiamond}";
+                tmpGateDiamondCount.text = $"×{valueChangingDiamond}";
                 break;
             case DiamondOperators.Divide:
-                tmpGateDiamondCount.text = $"��{valueChangingDiamond}";
+                tmpGateDiamondCount.text = $"÷{valueChangingDiamond}";
                 break;
         }        
     }

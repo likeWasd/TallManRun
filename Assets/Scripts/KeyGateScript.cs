@@ -6,11 +6,11 @@ using TMPro;
 public class KeyGateScript : MonoBehaviour
 {
     /// <summary>
-    /// Œ®‚ÌŒÂ”‚ğ•Ï‚¦‚é’l
+    /// éµã®å€‹æ•°ã‚’å¤‰ãˆã‚‹å€¤
     /// </summary>
     public int valueChangingKey;
     /// <summary>
-    /// Œ®‚ÌŒÂ”‚ğ‚Ç‚¤‚â‚Á‚Ä•Ï‰»‚³‚¹‚é‚©
+    /// éµã®å€‹æ•°ã‚’ã©ã†ã‚„ã£ã¦å¤‰åŒ–ã•ã›ã‚‹ã‹
     /// </summary>
     public enum KeyOperators
     {
@@ -33,10 +33,10 @@ public class KeyGateScript : MonoBehaviour
                 tmpGateKeyCount.text = $"-{valueChangingKey}";
                 break;
             case KeyOperators.Multiply:
-                tmpGateKeyCount.text = $"~{valueChangingKey}";
+                tmpGateKeyCount.text = $"Ã—{valueChangingKey}";
                 break;
             case KeyOperators.Divide:
-                tmpGateKeyCount.text = $"€{valueChangingKey}";
+                tmpGateKeyCount.text = $"Ã·{valueChangingKey}";
                 break;
         }        
     }

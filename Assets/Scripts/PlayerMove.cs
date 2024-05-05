@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    // DiamondƒXƒNƒŠƒvƒg‚ğ’è‹`
+    // Diamondã‚¹ã‚¯ãƒªãƒ—ãƒˆã‚’å®šç¾©
     public DiamondManager diamond;
-    // KeyƒXƒNƒŠƒvƒg‚ğ’è‹`
+    // Keyã‚¹ã‚¯ãƒªãƒ—ãƒˆã‚’å®šç¾©
     public KeyManager key;
-    // ƒvƒŒƒCƒ„[‚ÌƒXƒs[ƒh
+    // ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚¹ãƒ”ãƒ¼ãƒ‰
     public float playerSpeed;
     // Start is called before the first frame update
     void Start()
@@ -19,7 +19,10 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += transform.forward * playerSpeed * Time.deltaTime;
+        if (transform.position.z < 645)
+        {
+            transform.position += transform.forward * playerSpeed * Time.deltaTime;
+        }
         if (Input.GetKey(KeyCode.A))
         {
             transform.position -= transform.right * playerSpeed * Time.deltaTime;
@@ -32,27 +35,27 @@ public class PlayerMove : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        // DiamondGateƒ^ƒO‚ÌgameObject‚ÉÚG‚µ‚½‚ç
+        // DiamondGateã‚¿ã‚°ã®gameObjectã«æ¥è§¦ã—ãŸã‚‰
         if (other.gameObject.CompareTag("DiamondGate"))
         {
             DiamondGateScript diamondGateScript = other.gameObject.GetComponent<DiamondGateScript>();
-            // ƒ_ƒCƒ„ƒ‚ƒ“ƒh‚ğ‚Ç‚ê‚­‚ç‚¢•Ï‚¦‚é‚©‚ğæ“¾‚·‚é
+            // ãƒ€ã‚¤ãƒ¤ãƒ¢ãƒ³ãƒ‰ã‚’ã©ã‚Œãã‚‰ã„å¤‰ãˆã‚‹ã‹ã‚’å–å¾—ã™ã‚‹
             int diamondValue = diamondGateScript.valueChangingDiamond;
             DiamondGateScript.DiamondOperators diamondOp = diamondGateScript.diamondOperatorType;
-            // ƒ_ƒCƒ„ƒ‚ƒ“ƒh‚Ì”‚ğ‰Á‚¦‚é
+            // ãƒ€ã‚¤ãƒ¤ãƒ¢ãƒ³ãƒ‰ã®æ•°ã‚’åŠ ãˆã‚‹
             diamond.Change(diamondOp, diamondValue);
         }
-        // KeyGateƒ^ƒO‚ÌgameObject‚ÉÚG‚µ‚½‚ç
+        // KeyGateã‚¿ã‚°ã®gameObjectã«æ¥è§¦ã—ãŸã‚‰
         if (other.gameObject.CompareTag("KeyGate"))
         {
             KeyGateScript keyGateScript = other.gameObject.GetComponent<KeyGateScript>();
-            // Œ®‚ğ‚Ç‚ê‚­‚ç‚¢•Ï‚¦‚é‚©‚ğæ“¾‚·‚é
+            // éµã‚’ã©ã‚Œãã‚‰ã„å¤‰ãˆã‚‹ã‹ã‚’å–å¾—ã™ã‚‹
             int keyValue = keyGateScript.valueChangingKey;
             KeyGateScript.KeyOperators keyOp = keyGateScript.keyOperatorType;
-            // Œ®‚Ì”‚ğ‰Á‚¦‚é
+            // éµã®æ•°ã‚’åŠ ãˆã‚‹
             key.Change(keyOp, keyValue);
         }
-        // Goalƒ^ƒO‚ÌgameObject‚ÉÚG‚µ‚½‚ç
+        // Goalã‚¿ã‚°ã®gameObjectã«æ¥è§¦ã—ãŸã‚‰
         if (other.gameObject.CompareTag("Goal"))
         {
             diamond.DiamondAndKeyMultiplication(key.keyCount);

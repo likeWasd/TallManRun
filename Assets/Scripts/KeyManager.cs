@@ -6,7 +6,7 @@ using TMPro;
 public class KeyManager : MonoBehaviour
 {
     /// <summary>
-    /// Œ®‚ÌŒÂ”
+    /// éµã®å€‹æ•°
     /// </summary>
     public int keyCount;
     [SerializeField] int keyDefaultValue;
@@ -24,31 +24,31 @@ public class KeyManager : MonoBehaviour
         tmpkeyCount.text = "Key " + keyCount.ToString();
     }
 
-    // Œ®‚ÌŒÂ”‚ğƒZƒbƒg‚·‚é
+    // éµã®å€‹æ•°ã‚’ã‚»ãƒƒãƒˆã™ã‚‹
     public int Set(int value)
     {
         keyCount = value;
         return keyCount;
     }
     
-    // Œ®‚Ì”‚ğ•Ï‚¦‚é
+    // éµã®æ•°ã‚’å¤‰ãˆã‚‹
     public int Change(KeyGateScript.KeyOperators op, int value)
     {
         switch (op)
         {
-            // op‚ªAdd‚¾‚Á‚½ê‡
+            // opãŒAddã ã£ãŸå ´åˆ
             case KeyGateScript.KeyOperators.Add:
                 Add(value);
                 break;
-            // op‚ªSubtract‚¾‚Á‚½ê‡
+            // opãŒSubtractã ã£ãŸå ´åˆ
             case KeyGateScript.KeyOperators.Subtract:
                 Subtract(value);
                 break;
-            // op‚ªMultiply‚¾‚Á‚½ê‡
+            // opãŒMultiplyã ã£ãŸå ´åˆ
             case KeyGateScript.KeyOperators.Multiply:
                 Multiply(value);
                 break;
-            // op‚ªDivide‚¾‚Á‚½ê‡
+            // opãŒDivideã ã£ãŸå ´åˆ
             case KeyGateScript.KeyOperators.Divide:
                 Divide(value);
                 break;
@@ -56,28 +56,28 @@ public class KeyManager : MonoBehaviour
         return keyCount;
     }
 
-    // Œ®‚ÌŒÂ”‚ğ‘‚â‚·(‘«‚µZ‚·‚é)
+    // éµã®å€‹æ•°ã‚’å¢—ã‚„ã™(è¶³ã—ç®—ã™ã‚‹)
     int Add(int value)
     {
         keyCount += value;
         return keyCount;
     }
 
-    // Œ®‚ÌŒÂ”‚ğŒ¸‚ç‚·(ˆø‚«Z‚·‚é)
+    // éµã®å€‹æ•°ã‚’æ¸›ã‚‰ã™(å¼•ãç®—ã™ã‚‹)
     int Subtract(int value)
     {
         keyCount -= value;
         return keyCount;
     }
 
-    // Œ®‚ÌŒÂ”‚ğŠ|‚¯‚é(Š|‚¯Z‚·‚é)
+    // éµã®å€‹æ•°ã‚’æ›ã‘ã‚‹(æ›ã‘ç®—ã™ã‚‹)
     int Multiply(int value)
     {
         keyCount *= value;
         return keyCount;
     }
 
-    // Œ®‚ÌŒÂ”‚ğŠ„‚é(Š„‚èZ‚·‚é)
+    // éµã®å€‹æ•°ã‚’å‰²ã‚‹(å‰²ã‚Šç®—ã™ã‚‹)
     int Divide(int value)
     {
         keyCount /= value;

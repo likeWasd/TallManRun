@@ -6,15 +6,15 @@ using TMPro;
 public class DiamondManager : MonoBehaviour
 {
     /// <summary>
-    /// ƒ_ƒCƒ„ƒ‚ƒ“ƒh‚ÌŒÂ”
+    /// ãƒ€ã‚¤ãƒ¤ãƒ¢ãƒ³ãƒ‰ã®å€‹æ•°
     /// </summary>
     public int diamondCount;
     /// <summary>
-    /// ƒ_ƒCƒ„ƒ‚ƒ“ƒh‚ÌŒÂ”‚Ì‡Œv
+    /// ãƒ€ã‚¤ãƒ¤ãƒ¢ãƒ³ãƒ‰ã®å€‹æ•°ã®åˆè¨ˆ
     /// </summary>
     [SerializeField] int totalDiamondCount;
     /// <summary>
-    /// •Ê‚Ìƒ_ƒCƒ„ƒ‚ƒ“ƒh‚ÌŒÂ”‚Ì‡Œv‚Ì‰Šú’l
+    /// åˆ¥ã®ãƒ€ã‚¤ãƒ¤ãƒ¢ãƒ³ãƒ‰ã®å€‹æ•°ã®åˆè¨ˆã®åˆæœŸå€¤
     /// </summary>
     [SerializeField] int totalDiaCouDefVal;
     [SerializeField] int diamondDefaultValue;
@@ -26,7 +26,7 @@ public class DiamondManager : MonoBehaviour
         totalDiamondCount = totalDiaCouDefVal;
         diamondCount = diamondDefaultValue;
     }
-
+    
     // Update is called once per frame
     void Update()
     {
@@ -34,31 +34,31 @@ public class DiamondManager : MonoBehaviour
         tmpDiamondCount.text = "Diamond " + diamondCount.ToString();
     }
 
-    // ƒ_ƒCƒ„ƒ‚ƒ“ƒh‚ÌŒÂ”‚ğƒZƒbƒg‚·‚é
+    // ãƒ€ã‚¤ãƒ¤ãƒ¢ãƒ³ãƒ‰ã®å€‹æ•°ã‚’ã‚»ãƒƒãƒˆã™ã‚‹
     public int Set(int value)
     {
         diamondCount = value;
         return diamondCount;
     }
     
-    // ƒ_ƒCƒ„ƒ‚ƒ“ƒh‚Ì”‚ğ•Ï‚¦‚é
+    // ãƒ€ã‚¤ãƒ¤ãƒ¢ãƒ³ãƒ‰ã®æ•°ã‚’å¤‰ãˆã‚‹
     public int Change(DiamondGateScript.DiamondOperators op, int value)
     {
         switch (op)
         {
-            // op‚ªAdd‚¾‚Á‚½ê‡
+            // opãŒAddã ã£ãŸå ´åˆ
             case DiamondGateScript.DiamondOperators.Add:
                 Add(value);
                 break;
-            // op‚ªSubtract‚¾‚Á‚½ê‡
+            // opãŒSubtractã ã£ãŸå ´åˆ
             case DiamondGateScript.DiamondOperators.Subtract:
                 Subtract(value);
                 break;
-            // op‚ªMultiply‚¾‚Á‚½ê‡
+            // opãŒMultiplyã ã£ãŸå ´åˆ
             case DiamondGateScript.DiamondOperators.Multiply:
                 Multiply(value);
                 break;
-            // op‚ªDivide‚¾‚Á‚½ê‡
+            // opãŒDivideã ã£ãŸå ´åˆ
             case DiamondGateScript.DiamondOperators.Divide:
                 Divide(value);
                 break;
@@ -66,28 +66,28 @@ public class DiamondManager : MonoBehaviour
         return diamondCount;
     }
 
-    // ƒ_ƒCƒ„ƒ‚ƒ“ƒh‚ÌŒÂ”‚ğ‘‚â‚·(‘«‚µZ‚·‚é)
+    // ãƒ€ã‚¤ãƒ¤ãƒ¢ãƒ³ãƒ‰ã®å€‹æ•°ã‚’å¢—ã‚„ã™(è¶³ã—ç®—ã™ã‚‹)
     int Add(int value)
     {
         diamondCount += value;
         return diamondCount;
     }
 
-    // ƒ_ƒCƒ„ƒ‚ƒ“ƒh‚ÌŒÂ”‚ğŒ¸‚ç‚·(ˆø‚«Z‚·‚é)
+    // ãƒ€ã‚¤ãƒ¤ãƒ¢ãƒ³ãƒ‰ã®å€‹æ•°ã‚’æ¸›ã‚‰ã™(å¼•ãç®—ã™ã‚‹)
     int Subtract(int value)
     {
         diamondCount -= value;
         return diamondCount;
     }
 
-    // ƒ_ƒCƒ„ƒ‚ƒ“ƒh‚ÌŒÂ”‚ğŠ|‚¯‚é(Š|‚¯Z‚·‚é)
+    // ãƒ€ã‚¤ãƒ¤ãƒ¢ãƒ³ãƒ‰ã®å€‹æ•°ã‚’æ›ã‘ã‚‹(æ›ã‘ç®—ã™ã‚‹)
     int Multiply(int value)
     {
         diamondCount *= value;
         return diamondCount;
     }
 
-    // ƒ_ƒCƒ„ƒ‚ƒ“ƒh‚ÌŒÂ”‚ğŠ„‚é(Š„‚èZ‚·‚é)
+    // ãƒ€ã‚¤ãƒ¤ãƒ¢ãƒ³ãƒ‰ã®å€‹æ•°ã‚’å‰²ã‚‹(å‰²ã‚Šç®—ã™ã‚‹)
     int Divide(int value)
     {
         diamondCount /= value;
