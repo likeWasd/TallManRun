@@ -9,7 +9,7 @@ public class PlayerMove : MonoBehaviour
     // Keyスクリプトを定義
     public KeyManager key;
     // プレイヤーのスピード
-    public float playerSpeed;
+    [HideInInspector] public float playerSpeed;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,14 +22,14 @@ public class PlayerMove : MonoBehaviour
         if (transform.position.z < 645)
         {
             transform.position += transform.forward * playerSpeed * Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.position -= transform.right * playerSpeed * Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.position += transform.right * playerSpeed * Time.deltaTime;
+            if (Input.GetKey(KeyCode.A))
+            {
+                transform.position -= transform.right * playerSpeed * Time.deltaTime;
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                transform.position += transform.right * playerSpeed * Time.deltaTime;
+            }
         }
     }
 

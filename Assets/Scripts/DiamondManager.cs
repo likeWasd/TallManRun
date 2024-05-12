@@ -8,23 +8,24 @@ public class DiamondManager : MonoBehaviour
     /// <summary>
     /// ダイヤモンドの個数
     /// </summary>
-    public int diamondCount;
+    [HideInInspector] public int diamondCount;
     /// <summary>
     /// ダイヤモンドの個数の合計
     /// </summary>
-    [SerializeField] int totalDiamondCount;
+    int totalDiamondCount;
     /// <summary>
     /// 別のダイヤモンドの個数の合計の初期値
     /// </summary>
-    [SerializeField] int totalDiaCouDefVal;
-    [SerializeField] int diamondDefaultValue;
+    // [SerializeField] int totalDiaCouDefVal;
+    // [SerializeField] int diamondDefaultValue;
     [SerializeField] TextMeshProUGUI tmpDiamondCount;
     KeyManager keyManager;
+    [SerializeField] TextMeshProUGUI ScoreText;
     // Start is called before the first frame update
     void Start()
     {
-        totalDiamondCount = totalDiaCouDefVal;
-        diamondCount = diamondDefaultValue;
+        // totalDiamondCount = totalDiaCouDefVal;
+        diamondCount = 0; // デバッグ中は0をdiamondDefaultValueにする
     }
     
     // Update is called once per frame
@@ -98,6 +99,7 @@ public class DiamondManager : MonoBehaviour
     {
         diamondCount *= value;
         totalDiamondCount += diamondCount;
+        ScoreText.text = "Score:" + totalDiamondCount.ToString();
         diamondCount = 0;
     }
 }
